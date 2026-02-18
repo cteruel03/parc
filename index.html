@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parc ambiental</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Pannellum -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
+    <!-- Lightbox -->
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+
+    <style>
+        #panorama {
+            width: 100%;
+            height: 500px;
+        }
+
+        .mapa {
+            width: 100%;
+            height: 400px;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Parc ambiental</h1>
+</header>
+
+<section>
+    <div class="Columna">
+        <h3>Parc ambiental</h3>
+        <h3>Treball</h3>
+    </div>
+
+    <div class="Columna">
+        <p>
+            El Parc ambiental de Bufalvent és propietat del Consorci del Bages per a la gestió de residus,
+            que és l’entitat pública que gestiona els residus municipals.
+            Està situat al terme municipal de Manresa.
+        </p>
+        <p>
+            Té diverses funcions, a part de fomentar el reciclatge té els seus panells per l'energia solar.
+        </p>
+    </div>
+
+    <div class="galeria">
+        <a href="imatges/solsolet.jpg" data-lightbox="galeria">
+            <img src="imatges/solsolet.jpg">
+        </a>
+        <a href="imatges/travish.jpg" data-lightbox="galeria">
+            <img src="imatges/travish.jpg">
+        </a>
+        <a href="imatges/aguila.jpg" data-lightbox="galeria">
+            <img src="imatges/aguila.jpg">
+        </a>
+        <a href="imatges/excabadorabrrrbrrrr.jpg" data-lightbox="galeria">
+            <img src="imatges/excabadorabrrrbrrrr.jpg">
+        </a>
+        <a href="imatges/excabadorabrrrbrrrrxtrabish.jpg" data-lightbox="galeria">
+            <img src="imatges/excabadorabrrrbrrrrxtrabish.jpg">
+        </a>
+        <a href="imatges/lugar.jpg" data-lightbox="galeria">
+            <img src="imatges/lugar.jpg">
+        </a>
+    </div>
+</section>
+
+<section>
+    <h2>Visita 360°</h2>
+
+    <div class="mini360">
+        <img src="imatges/2_1abocador.jpg" onclick="cargar360('imatges/2_1abocador.jpg')">
+        <img src="imatges/3_plantatransferencia.jpg" onclick="cargar360('imatges/3_plantatransferencia.jpg')">
+        <img src="imatges/4_motorbiogas.jpg" onclick="cargar360('imatges/4_motorbiogas.jpg')">
+        <img src="imatges/5_bassesdaigues.jpg" onclick="cargar360('imatges/5_bassesdaigues.jpg')">
+        
+    </div>
+
+    <div id="panorama"></div>
+</section>
+
+<section>
+    <h2>Ubicació</h2>
+    <div class="mapa">
+        <iframe 
+            src="https://maps.google.com/maps?q=Parc%20Ambiental%20de%20Bufalvent%20Manresa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<script>
+let visor;
+
+visor = pannellum.viewer('panorama', {
+    type: 'equirectangular',
+    panorama: 'imatges/2_1abocador.jpg',
+    autoLoad: true,
+    showZoomCtrl: true
+});
+
+function cargar360(imagen) {
+    if (visor) {
+        visor.destroy();
+    }
+
+    visor = pannellum.viewer('panorama', {
+        type: 'equirectangular',
+        panorama: imagen,
+        autoLoad: true,
+        showZoomCtrl: true
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+header{
+    width:100%;
+    padding: 20px 0;
+    text-align: center;
+    height: 300px;
+    margin-top: 20px;
+    background-image: url("imatges/parc_ambiental_mapa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+body{
+    background-color: darkolivegreen;
+    margin: 0;
+    }
+
+h1{
+    color: white;
+}
+
+.imatge{
+    height: 50px;
+    align-items: center;
+}
+
+.Columna{
+    column-count: 3;
+    column-gap: 50px;
+    border: 2px green;
+    background-color: rgba(137, 218, 99, 0.5);
+    margin: 10px;
+    height: auto;
+}
+
+img{
+    height: 190px;
+    margin-left: 5px;
+}
+
+
+
+.galeria {
+    display: flex;             
+    justify-content: center;  
+    align-items: center;
+    gap: 15px;                  
+    flex-wrap: wrap;           
+}
+
+.galeria img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.mini360 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.mini360 img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mini360 img:hover {
+    transform: scale(1.1);
+}
+
+#panorama {
+    width: 80%;
+    height: auto;      
+    min-height: 0;    
+    margin: 5px auto;  
+}
+
+.mapa {
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+section {
+    margin: 10px 0;
+    padding: 10px 0;
+}
+h2 {
+    margin-bottom: 10px;
+}
